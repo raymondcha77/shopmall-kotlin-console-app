@@ -3,6 +3,7 @@ package screen
 import extensions.getNotEmptyString
 
 class ShoppingCategory : Screen() {
+
     fun showCategories() {
         /*
          * (1) 상품 카테고리 표시
@@ -36,8 +37,8 @@ class ShoppingCategory : Screen() {
         } else {
             if (categories.contains(selectedCategory)) {
                 // 카테고리 상품 목록 보여주기
-                val shoppingProductList = ShoppingProductList()
-                shoppingProductList.showProducts(selectedCategory)
+                val shoppingProductList = ShoppingProductList(selectedCategory)
+                shoppingProductList.showProducts()
             } else {
                 showErrorMessage(selectedCategory)
             }
